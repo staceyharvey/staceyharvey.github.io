@@ -8,6 +8,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="feature-script.js"></script>
     <title>Feature Sizing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "cera", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+            background-color: #ffce00;
+            color: #003c4d;
+        }
+        
+        #clear {
+            height: 200px;
+        }
+        
+        #switch {
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-decoration: none;
+            color: #3daf2c;
+            background-color: #003c4d;
+            border-radius: 5px;
+            padding: 0.2%;
+            font-weight: 700;
+            margin: 0.5%;
+            cursor: pointer;
+        }
+        
+        output {
+            display: none;
+        }
+        /* ######################################## Main ######################################## */
+        
+        main {
+            width: 100%;
+            padding: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 45% 45%;
+            grid-template-rows: auto auto;
+            column-gap: 5px;
+            row-gap: 5px;
+            justify-content: center;
+        }
+        /* ######################################## Fields ######################################## */
+        
+        fieldset {
+            padding: 2%;
+            border: none;
+        }
+        
+        h1 {
+            color: #fff;
+            background-color: #88d2e7;
+            padding: 2px 0 2px 5px;
+        }
+        
+        p {
+            font-size: 0.8rem;
+            font-style: italic;
+            display: inline;
+            margin-left: 1%;
+        }
+        
+        label {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .description,
+        .slider {
+            padding: 1%;
+        }
+        /* ######################################## Sliders ######################################## */
+        
+        .slider {
+            display: flex;
+            justify-content: center;
+        }
+        
+        input[type="range"] {
+            width: 95%;
+            height: 10px;
+            -webkit-appearance: none;
+            background-color: #898b8e;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: #003c4d;
+            width: 30px;
+            height: 30px;
+            border: #fff solid 4px;
+            border-radius: 50%;
+            cursor: -webkit-grab;
+        }
+        
+        .blue {
+            background: linear-gradient(90deg, rgba(136, 210, 231, 1) 0%, rgba(136, 210, 231, 1) 20%, rgba(137, 139, 142, 1) 20%, rgba(137, 139, 142, 1) 100%);
+        }
+        
+        .green {
+            background: linear-gradient(90deg, rgba(61, 175, 44, 1) 0%, rgba(61, 175, 44, 1) 40%, rgba(137, 139, 142, 1) 40%, rgba(137, 139, 142, 1) 100%);
+        }
+        
+        .yellow {
+            background: linear-gradient(90deg, rgb(228, 183, 2) 0%, rgb(228, 183, 2) 60%, rgba(137, 139, 142, 1) 60%, rgba(137, 139, 142, 1) 100%);
+        }
+        
+        .orange {
+            background: linear-gradient(90deg, rgba(255, 132, 0, 1) 0%, rgba(255, 132, 0, 1) 80%, rgba(137, 139, 142, 1) 80%, rgba(137, 139, 142, 1) 100%);
+        }
+        
+        .red {
+            background: linear-gradient(90deg, rgba(250, 54, 74, 1) 0%, rgba(250, 54, 74, 1) 100%);
+        }
+        
+        .blue::-webkit-slider-thumb {
+            background-color: #88d2e7;
+        }
+        
+        .green::-webkit-slider-thumb {
+            background-color: #3daf2c;
+        }
+        
+        .yellow::-webkit-slider-thumb {
+            background-color: #ffce00;
+        }
+        
+        .orange::-webkit-slider-thumb {
+            background-color: #ff8400;
+        }
+        
+        .red::-webkit-slider-thumb {
+            background-color: #fa364a;
+        }
+        /* ######################################## Footer ######################################## */
+        
+        #btn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        input[type="submit"] {
+            margin-top: 3%;
+            padding: 3px;
+            width: 235px;
+            height: 50px;
+            background-color: #3daf2c;
+            border-radius: 5px;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: "cera", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        }
+        
+        .ripple-btn {
+            transition: background 1s;
+        }
+        
+        .ripple-btn:hover {
+            background-image: radial-gradient(circle, transparent 1%, #3daf2c 1%);
+            background-size: 15000%;
+            background-position: center;
+        }
+        
+        .ripple-btn:active {
+            font-size: 15px;
+            transition: background 0s;
+            background-color: rgba(255, 255, 255, 0.5);
+            background-size: 100%;
+        }
+        /* ######################################## Footer ######################################## */
+        
+        footer {
+            height: 200px;
+            background-color: #003c4d;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #tshirts {
+            padding-top: 1%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .shirt-groups {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 1%;
+        }
+        
+        #logo {
+            display: inline-block;
+            position: fixed;
+            bottom: 1%;
+            left: 1%;
+            justify-self: flex-end;
+        }
+        
+        h2 {
+            color: #fff;
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+        /* ######################################## Responsive ######################################## */
+        
+        @media (max-width: 1200px) {
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            fieldset {
+                width: 80%;
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            #logo {
+                display: none;
+            }
+        }
+        /* ######################################## Key ######################################## */
+        
+        h6 {
+            color: #fa364a;
+            color: #ff8400;
+            color: #ffce00;
+            color: #3daf2c;
+            color: #88d2e7;
+            color: #003c4d;
+            color: #898b8e;
+            color: #d0d3d4;
+        }
+    </style>
 </head>
 
 <body>
