@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="feature-style.css" />
+    <link rel="icon" href="../images/tp green.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="feature-script.js"></script>
+    <title>Feature Sizing</title>
+</head>
+
+<body>
+    <header>
+        <button onclick="window.location.href='http://rawcdn.githack.com/staceyharvey/sizing/main/apps/Story/story-sizing.html'" id="switch">Switch</button>
+    </header>
+    <main>
+        <form id="form">
+            <!-- ################################################################################ Requirements ################################################################################ -->
+            <fieldset id="requirements-section">
+                <h1>Requirements</h1>
+                <div class="description">
+                    <label>Complexity</label>
+                    <p>Heart surgery vs stamp 1000 envelopes. Both may take the same length of time but one is more complex.</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="12.5" step="2.5" id="complexity" class="default" oninput="document.getElementById('complexity-output').innerHTML = this.value" />
+                    <output id="complexity-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Uncertainty</label>
+                    <p>Are the requirements likely to change given empirical evidence?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="12.5" step="2.5" id="uncertainty" class="default" oninput="document.getElementById('uncertainty-output').innerHTML = this.value" />
+                    <output id="uncertainty-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Security</label>
+                    <p>Does the feature have any special security requirements?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="5" step="1" id="security" class="default" oninput="document.getElementById('security-output').innerHTML = this.value" />
+                    <output id="security-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Controls</label>
+                    <p>Does the feature have external controls such as Single Sign On, Multi-Factor Authentication, or Industry Standards?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="5" step="1" id="controls" class="default" oninput="document.getElementById('controls-output').innerHTML = this.value" />
+                    <output id="controls-output">0</output>
+                </div>
+            </fieldset>
+            <!-- ################################################################################ Development ################################################################################ -->
+            <fieldset id="development-section">
+                <h1>Development</h1>
+                <div class="description">
+                    <label>Unfamiliarity</label>
+                    <p>Is the technology well known or will we require training or consulting?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="6.25" step="1.25" id="unfamiliarity" class="default" oninput="document.getElementById('unfamiliarity-output').innerHTML = this.value" />
+                    <output id="unfamiliarity-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Code Quality</label>
+                    <p>Are there known issue? Have we worked on this recently?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="12.5" step="2.5" id="quality" class="default" oninput="document.getElementById('quality-output').innerHTML = this.value" />
+                    <output id="quality-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Dependencies</label>
+                    <p>Internal, External, Microservices and APIs, B2B services.</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="5" step="1" id="dependencies" class="default" oninput="document.getElementById('dependencies-output').innerHTML = this.value" />
+                    <output id="dependencies-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Performance</label>
+                    <p>SLAs, Number of Transactions, Storage Size, CPU.</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="6.25" step="1.25" id="performance" class="default" oninput="document.getElementById('performance-output').innerHTML = this.value" />
+                    <output id="performance-output">0</output>
+                </div>
+            </fieldset>
+            <!-- ################################################################################ Testing ################################################################################ -->
+            <fieldset id="testing-section">
+                <h1>Testing</h1>
+                <div class="description">
+                    <label>Manual</label>
+                    <p>Do you have a lot of data to prepare?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="3.75" step="0.75" id="manual" class="default" oninput="document.getElementById('manual-output').innerHTML = this.value" />
+                    <output id="manual-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Performance</label>
+                    <p>Are there specific performance requirements to be met?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="2.5" step="0.5" id="perf" class="default" oninput="document.getElementById('perf-output').innerHTML = this.value" />
+                    <output id="perf-output">0</output>
+                </div>
+
+                <div class="description">
+                    <label>Automation</label>
+                    <p>Do you already have a start in this area of the code?</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="7.5" step="1.5" id="automation" class="default" oninput="document.getElementById('automation-output').innerHTML = this.value" />
+                    <output id="automation-output">0</output>
+                </div>
+            </fieldset>
+            <!-- ################################################################################ Infrastructure ################################################################################ -->
+            <fieldset id="infrastructure-section">
+                <h1>Infrastructure</h1>
+                <div class="description">
+                    <label>Complexity</label>
+                    <p>Building and releasing. Environments.</p>
+                </div>
+                <div class="slider">
+                    <input type="range" value="0" min="0" max="3.75" step="0.75" id="infra" class="default" oninput="document.getElementById('infra-output').innerHTML = this.value" />
+                    <output id="infra-output">0</output>
+                </div>
+                <div id="btn">
+                    <input type="submit" value="Calculate" id="calculate" class="ripple-btn" />
+                </div>
+            </fieldset>
+            <!-- ################################################################################ Footer ################################################################################ -->
+        </form>
+        <script src="feature-script.js"></script>
+    </main>
+    <div id="clear"></div>
+    <footer>
+        <div id="tshirts">
+            <div class="shirt-groups" id="week1">
+                <img id="xs" src="../images/Blue.png" />
+                <h2>0.5 Sprint</h2>
+            </div>
+            <div class="shirt-groups" id="week2">
+                <img id="s" src="../images/Green.png" />
+                <h2>1 Sprint</h2>
+            </div>
+            <div class="shirt-groups" id="week3">
+                <img id="m" src="../images/Yellow.png" />
+                <h2>1.5 Sprints</h2>
+            </div>
+            <div class="shirt-groups" id="week4">
+                <img id="l" src="../images/Orange.png" />
+                <h2>2 Sprints</h2>
+            </div>
+            <div class="shirt-groups" id="too-big">
+                <img id="xl" src="../images/Red.png" />
+                <h2>Too Big!</h2>
+            </div>
+        </div>
+        <img id="logo" src="../images/4-logo.png" />
+    </footer>
+</body>
+
+</html>
